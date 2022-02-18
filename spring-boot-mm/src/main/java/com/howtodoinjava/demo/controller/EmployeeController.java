@@ -1,9 +1,22 @@
 package com.howtodoinjava.demo.controller;
 
-// this is a Rest Controller
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.howtodoinjava.demo.model.Employee;
+
+@RestController
 public class EmployeeController {
 
-	// add 2 employee
-	// Rest Endpoint to return list of employee
+    @RequestMapping("/")
+    public List<Employee> getEmployees()
+    {
+        List<Employee> employeesList = new ArrayList<Employee>();
+        employeesList.add(new Employee(1,"lokesh","gupta","howtodoinjava@gmail.com"));
+        return employeesList;
+    }
 
 }
